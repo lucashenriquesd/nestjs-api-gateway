@@ -7,6 +7,11 @@ import { AuthService } from './auth/auth.service';
 export class AppController {
   constructor(private authService: AuthService) {}
 
+  @Get()
+  index() {
+    return 'nestjs-api-gateway';
+  }
+
   @UseGuards(LocalAuthGuard)
   @Post('auth/login')
   async login(@Request() req) {
