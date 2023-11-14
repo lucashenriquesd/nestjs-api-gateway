@@ -9,7 +9,7 @@ export class AppController {
 
   @Get()
   index() {
-    return 'nestjs-api-gateway';
+    return process.env.APP_NAME;
   }
 
   @UseGuards(LocalAuthGuard)
